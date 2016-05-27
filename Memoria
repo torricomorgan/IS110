@@ -11,7 +11,7 @@ void ingresavector(int*V, int N);
 void comparador(int*V1,int*V2, int N);
 
 void main()
-{int A[5],N=5,S,B[5];
+{int A[7],N=7,S,B[7];
 srand((unsigned)time(NULL));
 Bienvenida();
 scanf("%d", &S);
@@ -19,7 +19,7 @@ system("cls");
 numerosaleatorios(A, N);
 printf ("Tienes 7 segundos para memorizar\n");
 mostrarnumeros(A, N);
-Sleep(3000);
+Sleep(7000);
 system("cls");
 ingresavector(B, N);
 comparador(A,B,N);
@@ -48,12 +48,18 @@ void ingresavector(int*V, int N)
 {printf ("N%d: ", i+1);scanf ("%d", &V[i]);}
 }
 
-void comparador(int*V1,int*V2, int N)
-{ int C;
+void comparador(int*V1,int*V2,int N)
+{ int C, VC[7], i;
 C=0;
-	for (int i=0; i<N; i++)
-	{if (V1[i]==V2[i]){C=C+1;} else {}
+	for (i=0; i<N; i++)
+	{if (V1[i]==V2[i]){C++;VC[C-1]=V1[i];} else {}
 	 // fin del for
 	}
-	printf ("%d", &C);
+	Sleep(700);
+	system("cls");
+	printf ("Numeros acertados: ");
+	for (int j=0; j<C; j++)
+	{printf ("%d  ", VC[j]);}
+	printf ("Acertaste:%d\n\n", C);
+
 }
