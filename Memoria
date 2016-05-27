@@ -1,0 +1,59 @@
+// JuegoMemoria.cpp : Defines the entry point for the console application.
+//Autor: Matias
+#include "stdafx.h"
+#include <Windows.h>
+#include <stdlib.h>
+#include <time.h>
+void numerosaleatorios(int*V,int N);
+void mostrarnumeros(int*V, int N);
+void Bienvenida();
+void ingresavector(int*V, int N);
+void comparador(int*V1,int*V2, int N);
+
+void main()
+{int A[5],N=5,S,B[5];
+srand((unsigned)time(NULL));
+Bienvenida();
+scanf("%d", &S);
+system("cls");
+numerosaleatorios(A, N);
+printf ("Tienes 7 segundos para memorizar\n");
+mostrarnumeros(A, N);
+Sleep(3000);
+system("cls");
+ingresavector(B, N);
+comparador(A,B,N);
+}
+
+void Bienvenida()
+{printf ("\t\t\t\tBIENVENIDOS\n\t\t\t\t_ _ _ _ _ _\nGuia:\n");
+printf ("1)El juego consiste en recordar los numeros");
+printf ("\n2)Tienes 7 segundos antes de que los numeros desaparezcan");
+printf ("\n3)Luego los tienes que ingresar en su orden");
+printf ("\n\n Ingresa 1 para empezar ");
+}
+
+void numerosaleatorios(int*V,int N)
+{for (int i=0; i<N; i++)
+{V[i]=rand()%10+1;}//fin del For
+}
+
+void mostrarnumeros(int*V, int N)
+{for (int i=0; i<N; i++)
+{printf ("\nN%d: %d", i+1, V[i]);}
+}
+
+void ingresavector(int*V, int N)
+{ for (int i=0; i<N; i++)
+{printf ("N%d: ", i+1);scanf ("%d", &V[i]);}
+}
+
+void comparador(int*V1,int*V2, int N)
+{ int C;
+C=0;
+	for (int i=0; i<N; i++)
+	{if (V1[i]==V2[i]){C=C+1;} else {}
+	 // fin del for
+	}
+	printf ("%d", &C);
+}
