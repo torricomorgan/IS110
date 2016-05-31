@@ -1,0 +1,38 @@
+//Autor: Matias 
+
+#include "stdafx.h"
+#define NMAX 100
+void llenarvector(int*V, int N);
+void mostrarvector(int*V, int N);
+void invertir (int*V, int N);
+
+void main()
+{int N,A[NMAX];
+printf ("Insertar N:");
+scanf("%d", &N);
+llenarvector(A,N);
+invertir(A,N);
+printf ("\nVector Invertido\n");
+mostrarvector(A, N);
+}
+
+void llenarvector(int*V, int N)
+{ 
+	for(int i=0; i<N; i++)
+	{printf ("Vector %d:", i+1);
+	scanf ("%d", &V[i]);}
+}
+
+void mostrarvector(int*V, int N)
+{
+	for (int i=0; i<N; i++)
+	{printf ("Vector %d: %d\n", i+1, V[i]);}
+}
+
+void invertir (int*V, int N)
+{
+ for (int i=0; i<N/2; i++)
+ {int aux=V[i];
+ V[i]=V[N-i-1];
+ V[N-i-1]=aux;}
+ }
