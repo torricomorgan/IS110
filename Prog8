@@ -1,0 +1,40 @@
+#include "stdafx.h"
+#include <math.h>
+void reales (float a, float b, float c, float D);
+void doble (float a, float b);
+void complejas (float a, float b, float c, float D);
+void simple (float b, float c);
+
+void main()
+{float a,b,c,D;
+  printf ("Insertar a,b,c: ");
+  scanf("%f%f%f", &a, &b, &c);
+  if (a==0) {simple(b,c);} else {
+  D=pow(b,2)-(4*a*c);
+  if (D>0) {reales(a,b,c,D);} else {if (D<0){complejas(a,b,c,D);} else {doble (a,b);}}
+  }}
+
+void reales (float a, float b, float c, float D)
+{float X1, X2;
+	X1=(-b+sqrt(D))/(2*a); X2=(-b-sqrt(D))/(2*a);
+	printf("X1= %f y X2= %f \n", X1, X2);
+}
+
+void doble (float a, float b)
+{float X;
+ X=-b/(2*a);
+ printf("X1 y X2= %f \n", X);
+}
+
+void complejas (float a, float b, float c, float D)
+{float PR, PI;
+ PR= -b/(2*a); PI=sqrt(-D)/(2*a);
+ printf ("X1= %f + %fi", PR, PI);
+ printf ("  X2= %f - %fi\n", PR, PI);
+}
+
+void simple (float b, float c)
+{float X;
+ X=-c/b;
+ printf("X= %f \n", X);
+}
