@@ -1,0 +1,17 @@
+#include "stdafx.h"
+long FAC(int A);
+
+void main()
+{int N,R; double C=0;
+ printf ("Insertar N y R: ");
+ scanf ("%d%d", &N,&R);
+ C=FAC(N)/(FAC(R)*FAC(N-R));
+ printf ("Resultado= %f\n", C);
+}
+
+long FAC(int A)
+{int fac=1;
+	for (int i=0; i<=A; i++)
+		{fac=fac*i;}
+	return fac;
+}
