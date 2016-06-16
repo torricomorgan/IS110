@@ -1,0 +1,21 @@
+#include "stdafx.h"
+int bindex(int X);
+
+void main()
+{int X,D;
+	printf ("Binario: ");
+	scanf ("%d", &X);
+	D=bindex(X);
+	printf ("En decimal= %d\n", D);
+}
+
+int bindex(int X)
+{int dex= 0,r,uno= 1, bin=X;
+  while (X > 0)
+    {
+        r=X%10;
+        dex=dex+(r*uno);
+        uno=uno*2;
+        X = X/10;
+    } return dex;
+}
