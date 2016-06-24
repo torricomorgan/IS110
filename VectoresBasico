@@ -1,0 +1,15 @@
+void cargarvector(int*V, int N);
+void mostrarvector (int*V, int N);
+
+void cargarvector(int*V, int N)
+{int i=0;
+ for (i=0; i<N; i++)
+ {printf ("Vector N%d: ", i+1); 
+  scanf ("%d", &V[i]);}
+}
+
+void mostrarvector (int*V, int N)
+{int i=0;
+	for (i=0; i<N; i++)
+	{printf ("Vector N%d: %d\n", i+1, V[i]);}
+}
