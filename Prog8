@@ -1,0 +1,41 @@
+#include "stdafx.h"
+#define NMAX 100
+void cargarvector(float*V, int N);
+void mostrarvector (float*V, int N);
+float diferencia (float*V, int N);
+
+void main()
+{int N; float V[NMAX], X=0;
+ printf("Ingrese el tamaño del vector: ");	
+ scanf ("%d", &N);
+ cargarvector(V,N);
+ printf("\n");
+ mostrarvector(V,N);
+ X=diferencia(V,N);
+ printf ("Diferencia mayor=%0.2f", X);
+}
+
+void cargarvector(float*V, int N)
+{int i=0;
+ for (i=0; i<N; i++)
+ {printf ("Vector N%d: ", i+1); 
+  scanf ("%f", &V[i]);}
+}
+
+void mostrarvector (float*V, int N)
+{int i=0;
+	for (i=0; i<N; i++)
+	{printf ("Vector N%d: %0.3f\n", i+1, V[i]);}
+}
+
+float diferencia (float*V, int N)
+{float aux, D[NMAX];
+	for (int i=1; i<N; i++)
+     { D[i-1]= (V[i-1] - V[i]);
+	  }// fin for
+	aux=D[0];
+	for (int j=0; j<N; j++)
+	{
+		if (aux<D[j]) {aux=D[j];}
+	}
+ return aux;}
